@@ -8,7 +8,11 @@ class SpeechService {
   bool get isInitialized => _isInitialized;
 
   Future<bool> initialize() async {
-    _isInitialized = await _speech.initialize();
+    _isInitialized = await _speech.initialize(
+      onError: (error) => print('Speech error: ${error.errorMsg}'),
+      onStatus: (status) => print('Speech status: $status'),
+    );
+    print('Speech initialized: $_isInitialized');
     return _isInitialized;
   }
 
