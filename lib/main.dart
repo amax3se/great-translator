@@ -200,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> { // main logic
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-                if (action != null) action,
+                ?action,
               ],
             ),
             const SizedBox(height: 8),
